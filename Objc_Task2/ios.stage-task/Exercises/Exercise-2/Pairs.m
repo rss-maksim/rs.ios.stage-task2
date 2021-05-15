@@ -3,7 +3,15 @@
 @implementation Pairs
 
 - (NSInteger)countPairs:(NSArray <NSNumber *> *)array number:(NSNumber *)number {
-    return 0;
+    int counter = 0;
+    for (int i = 0; i < array.count; i++) {
+        for (int j = i; j < array.count; j++) {
+            if (array[j].intValue - array[i].intValue == number.intValue) {
+                counter += 1;
+            }
+        }
+    }
+    return counter;
 }
 
 @end
